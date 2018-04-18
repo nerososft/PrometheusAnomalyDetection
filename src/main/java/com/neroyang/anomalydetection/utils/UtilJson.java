@@ -1,7 +1,4 @@
 package com.neroyang.anomalydetection.utils;
-
-import com.alibaba.dubbo.common.json.JSON;
-import com.alibaba.dubbo.common.json.ParseException;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.gson.Gson;
 
@@ -25,8 +22,9 @@ public class UtilJson {
         return gson.toJson(result);
     }
 
-    public static Map<String,Object> toMap(String params) throws ParseException {
-        return JSON.parse(params,Map.class);
+    public static Map<String,Object> toMap(String params){
+        Gson gson = new Gson();
+        return gson.fromJson(params,Map.class);
     }
 
     public static class JSON_MAPPER {

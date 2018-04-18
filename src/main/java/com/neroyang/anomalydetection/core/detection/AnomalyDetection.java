@@ -5,6 +5,8 @@ import com.neroyang.anomalydetection.CONSTANT.DetectionMethod;
 
 import java.util.HashMap;
 
+import static com.neroyang.anomalydetection.CONSTANT.DetectionMethod.*;
+
 /**
  * Author neroyang
  * Email  nerosoft@outlook.com

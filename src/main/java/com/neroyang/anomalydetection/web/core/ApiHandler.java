@@ -1,6 +1,5 @@
 package com.neroyang.anomalydetection.web.core;
 
-import com.alibaba.dubbo.common.json.ParseException;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.gson.Gson;
 import com.neroyang.anomalydetection.exception.ApiException;
@@ -19,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.text.ParseException;
 import java.util.*;
 
 /**
@@ -147,8 +147,6 @@ public class ApiHandler implements InitializingBean, ApplicationContextAware {
 
         } catch (IllegalArgumentException e) {
             throw new ApiException("调用失败：JSON字符串格式化失败，请检查params参数");
-        } catch (ParseException e) {
-            throw new ApiException("调用失败：JSON字符串toMap失败，请检查params参数");
         }
         logger.error("________________MAP : " + map.toString());
         if (map == null) {

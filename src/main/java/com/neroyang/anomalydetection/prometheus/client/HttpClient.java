@@ -7,6 +7,7 @@ import com.neroyang.anomalydetection.prometheus.exception.ServiceUnavailableExce
 import com.neroyang.anomalydetection.prometheus.exception.UnprocessableEntityException;
 import com.neroyang.anomalydetection.prometheus.response.HttpResponse;
 import com.neroyang.anomalydetection.prometheus.response.QueryData;
+import com.neroyang.anomalydetection.utils.ConfigUtil;
 import com.neroyang.anomalydetection.utils.spring.PropertyPlaceholder;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -19,6 +20,7 @@ import org.apache.http.util.EntityUtils;
 import javax.management.Query;
 import javax.xml.ws.Response;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URISyntaxException;
 
 import static com.neroyang.anomalydetection.prometheus.constant.CONSTANT.CODE_400;
@@ -33,16 +35,24 @@ import static com.neroyang.anomalydetection.prometheus.constant.CONSTANT.CODE_50
  */
 public class HttpClient {
     private PrometheusHttpApi prometheusHttpApi;
+    private ConfigUtil configUtil;
 
-    public HttpClient() {
+    public HttpClient() throws IOException {
 
+        configUtil = new ConfigUtil();
         //Load Config
-        final String PrometheusHost = PropertyPlaceholder.getProperty("prometheus.host").toString();
-        final String PrometheusPort = PropertyPlaceholder.getProperty("prometheus.port").toString();
-        final String PrometheusNameSpace = PropertyPlaceholder.getProperty("prometheus.namespace").toString();
+        String PrometheusHost = configUtil.getConfig("prometheus.host");
+        String PrometheusPort = configUtil.getConfig("prometheus.port");
+        String PrometheusNameSpace = configUtil.getConfig("prometheus.namespace");
 
         this.prometheusHttpApi = new PrometheusHttpApi(PrometheusHost,PrometheusPort,PrometheusNameSpace);
     }
+
+    public HttpClient(String host, String port, String nameSpace){
+        this.prometheusHttpApi = new PrometheusHttpApi(host,port,nameSpace);
+    }
+
+
 
 
     /**
@@ -57,17 +67,19 @@ public class HttpClient {
         uriBuilder.addParameter("query",query);
         uriBuilder.addParameter("time",time);
 
-        HttpResponse httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        URI uri = uriBuilder.build();
+        System.out.println(uri);
+        HttpResponse httpResponse = doHttpRequest(HttpResponse.class,uri);
         return httpResponse;
     }
 
-    private <T> T doHttpRequest(Class<T> data, URIBuilder uriBuilder) throws IOException, URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException {
+    private <T> T doHttpRequest(Class<T> data, URI uri) throws IOException, URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException {
         CloseableHttpClient httpClient = null;
         CloseableHttpResponse response = null;
         try {
             httpClient = HttpClients.createDefault();
 
-            HttpGet get = new HttpGet(uriBuilder.build());
+            HttpGet get = new HttpGet(uri);
             //执行请求
             response = httpClient.execute(get);
             //取响应的结果
@@ -80,18 +92,20 @@ public class HttpClient {
                 case 503:
                     throw new ServiceUnavailableException(CODE_503);
             }
-            System.out.println(statusCode);
 
             HttpEntity entity = response.getEntity();
-
             String string = EntityUtils.toString(entity, "utf-8");
-
             Gson gson = new Gson();
             T result = gson.fromJson(string,data);
             return result;
         }finally {
-            response.close();
-            httpClient.close();
+            if(response!=null) {
+                response.close();
+            }
+            if(httpClient!=null) {
+                httpClient.close();
+            }
+
         }
     }
 }
