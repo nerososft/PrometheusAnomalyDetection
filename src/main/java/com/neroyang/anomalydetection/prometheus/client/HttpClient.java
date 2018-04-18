@@ -9,19 +9,28 @@ import com.neroyang.anomalydetection.prometheus.response.HttpResponse;
 import com.neroyang.anomalydetection.prometheus.response.QueryData;
 import com.neroyang.anomalydetection.utils.ConfigUtil;
 import com.neroyang.anomalydetection.utils.spring.PropertyPlaceholder;
+import com.sun.javafx.fxml.builder.URLBuilder;
+import org.apache.http.ConnectionReuseStrategy;
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.impl.DefaultBHttpClientConnection;
+import org.apache.http.impl.DefaultConnectionReuseStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicHttpRequest;
+import org.apache.http.protocol.*;
 import org.apache.http.util.EntityUtils;
 
 import javax.management.Query;
 import javax.xml.ws.Response;
 import java.io.IOException;
+import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 
 import static com.neroyang.anomalydetection.prometheus.constant.CONSTANT.CODE_400;
 import static com.neroyang.anomalydetection.prometheus.constant.CONSTANT.CODE_422;
@@ -74,6 +83,7 @@ public class HttpClient {
     }
 
     private <T> T doHttpRequest(Class<T> data, URI uri) throws IOException, URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException {
+
         CloseableHttpClient httpClient = null;
         CloseableHttpResponse response = null;
         try {
