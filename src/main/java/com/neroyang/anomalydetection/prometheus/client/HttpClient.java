@@ -64,32 +64,74 @@ public class HttpClient {
 
 
 
+
     /**
+     *
      * query=<string>: Prometheus expression query string.
      * time=<rfc3339 | unix_timestamp>: Evaluation timestamp. Optional.
      * timeout=<duration>: Evaluation timeout. Optional. Defaults to and is capped by the value of the -query.timeout flag.
+     * @param query
+     * @param time
+     * @param timeout
      * @return
      * @throws URISyntaxException
+     * @throws ParametersIncorrectException
+     * @throws UnprocessableEntityException
+     * @throws ServiceUnavailableException
+     * @throws IOException
      */
     HttpResponse<QueryData> instantQueries(String query, String time, Integer timeout) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.instantQueries());
         uriBuilder.addParameter("query",query);
         uriBuilder.addParameter("time",time);
+        uriBuilder.addParameter("timeout",String.valueOf(timeout));
 
-        URI uri = uriBuilder.build();
-        System.out.println(uri);
-        HttpResponse httpResponse = doHttpRequest(HttpResponse.class,uri);
+
+        HttpResponse httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
         return httpResponse;
     }
 
-    private <T> T doHttpRequest(Class<T> data, URI uri) throws IOException, URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException {
+    /**
+     *
+     * query=<string>: Prometheus expression query string.
+     * start=<rfc3339 | unix_timestamp>: Start timestamp.
+     * end=<rfc3339 | unix_timestamp>: End timestamp.
+     * step=<duration>: Query resolution step width.
+     * timeout=<duration>: Evaluation timeout. Optional. Defaults to and is capped by the value of the -query.timeout flag.
+     * @param query
+     * @param start
+     * @param end
+     * @param step
+     * @param timeout
+     * @return
+     * @throws URISyntaxException
+     * @throws ParametersIncorrectException
+     * @throws UnprocessableEntityException
+     * @throws ServiceUnavailableException
+     * @throws IOException
+     */
+    HttpResponse<QueryData> rangeQueries(String query,String start,String end,Integer step,Integer timeout) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+        URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.instantQueries());
+        uriBuilder.addParameter("query",query);
+        uriBuilder.addParameter("start",start);
+        uriBuilder.addParameter("end",end);
+        uriBuilder.addParameter("step",String.valueOf(step));
+        uriBuilder.addParameter("timeout",String.valueOf(timeout));
+
+        HttpResponse httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        return httpResponse;
+    }
+
+
+
+    private <T> T doHttpRequest(Class<T> data, URIBuilder uri) throws IOException, URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException {
 
         CloseableHttpClient httpClient = null;
         CloseableHttpResponse response = null;
         try {
             httpClient = HttpClients.createDefault();
 
-            HttpGet get = new HttpGet(uri);
+            HttpGet get = new HttpGet(uri.build());
             //执行请求
             response = httpClient.execute(get);
             //取响应的结果
