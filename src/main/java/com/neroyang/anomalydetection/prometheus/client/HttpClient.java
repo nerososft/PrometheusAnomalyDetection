@@ -87,7 +87,7 @@ public class HttpClient {
         uriBuilder.addParameter("timeout",String.valueOf(timeout));
 
 
-        HttpResponse httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
         return httpResponse;
     }
 
@@ -118,7 +118,8 @@ public class HttpClient {
         uriBuilder.addParameter("step",String.valueOf(step));
         uriBuilder.addParameter("timeout",String.valueOf(timeout));
 
-        HttpResponse httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+
         return httpResponse;
     }
 

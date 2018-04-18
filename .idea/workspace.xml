@@ -44,8 +44,8 @@
       <file leaf-file-name="HttpClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/client/HttpClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="118" column="33" lean-forward="true" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+            <state relative-caret-position="-220">
+              <caret line="89" column="30" lean-forward="false" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1065,7 +1065,7 @@
       <updated>1523977185420</updated>
       <workItem from="1523977193555" duration="5564000" />
       <workItem from="1524034771127" duration="28000" />
-      <workItem from="1524064831186" duration="9370000" />
+      <workItem from="1524064831186" duration="9428000" />
     </task>
     <servers />
   </component>
@@ -1102,7 +1102,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14962000" />
+    <option name="totallyTimeSpent" value="15020000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -1651,8 +1651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/client/HttpClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="118" column="33" lean-forward="true" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+        <state relative-caret-position="-220">
+          <caret line="89" column="30" lean-forward="false" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
