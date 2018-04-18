@@ -1,0 +1,5 @@
+
+:squid:S1068"%Remove this unused "a" private field.(ùüñØ
+:squid:S1068"%Remove this unused "b" private field.(ÓÁí´
+Hsquid:S1068".Remove this unused "dataPoints" private field.(ö”ü¡ÿÿÿÿÿ
+ssquid:S1450"YRemove the "dataPoints" field and declare it as a local variable in the relevant methods.(ö”ü¡ÿÿÿÿÿ
