@@ -58,6 +58,81 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/PrometheusHttpApi.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/api/PrometheusHttpApi.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/client/HttpClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/constant/CONSTANT.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/exception/ParametersIncorrectException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/exception/ServiceUnavailableException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/exception/UnprocessableEntityException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/HttpResponse.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/Instant.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/InstantVectors.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/QueryData.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/Range.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/RangeVectors.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/Scalars.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/Strings.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/pingcap/anomalydetection/CONSTANT/CONSTANT.java">
           <value>
             <set />

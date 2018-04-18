@@ -49,16 +49,6 @@
   </build>
 
   <dependencies>
-    <dependency>
-      <groupId>com.aliyun</groupId>
-      <artifactId>aliyun-java-sdk-core</artifactId>
-      <version>3.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.aliyun</groupId>
-      <artifactId>aliyun-java-sdk-dm</artifactId>
-      <version>3.1.0</version>
-    </dependency>
     <!-- project dependencies-->
     <!--1:log log4j,slf4j,logback,common-logging-->
     <dependency>
@@ -195,28 +185,7 @@
       <version>4.1.7.RELEASE</version>
     </dependency>
 
-    <!--paho mqtt-->
-    <!--https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.client.mqttv3-->
-    <dependency>
-      <groupId>org.eclipse.paho</groupId>
-      <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
-      <version>1.1.0</version>
-    </dependency>
 
-
-    <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
-    <dependency>
-      <groupId>javax.mail</groupId>
-      <artifactId>mail</artifactId>
-      <version>1.5.0-b01</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-email</artifactId>
-      <version>1.4</version>
-    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -224,109 +193,19 @@
     </dependency>
 
 
-    <!--&lt;!&ndash; http client&ndash;&gt;-->
-    <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient &ndash;&gt;-->
-    <!--<dependency>-->
-    <!--<groupId>org.apache.httpcomponents</groupId>-->
-    <!--<artifactId>httpclient</artifactId>-->
-    <!--<version>4.5.1</version>-->
-    <!--</dependency>-->
-
-
-    <!--&lt;!&ndash;苹果推送需要依赖&ndash;&gt;-->
-    <!--<dependency>-->
-    <!--<groupId>com.notnoop.apns</groupId>-->
-    <!--<artifactId>apns</artifactId>-->
-    <!--<version>1.0.0.Beta6</version>-->
-    <!--</dependency>-->
-
-    <!--RPC framework-->
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-all</artifactId>
-      <version>5.0.0.Alpha2</version>
-    </dependency>
-    <!--阿里巴巴dubbo依赖-->
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>dubbo</artifactId>
-      <version>2.5.3</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>spring</artifactId>
-          <groupId>org.springframework</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-    <!--注册中心依赖-->
-    <dependency>
-      <groupId>org.ow2.util.bundles</groupId>
-      <artifactId>zookeeper-3.3.1</artifactId>
-      <version>1.0.0</version>
-    </dependency>
-    <!--zkclient-->
-    <dependency>
-      <groupId>com.github.sgroschupf</groupId>
-      <artifactId>zkclient</artifactId>
-      <version>0.1</version>
-    </dependency>
-
-
-    <!--分布式session共享相关依赖-->
-    <!-- Jedis -->
-    <dependency>
-      <groupId>redis.clients</groupId>
-      <artifactId>jedis</artifactId>
-      <version>2.9.0</version>
-    </dependency>
-    <!-- Spring Data Redis -->
-    <dependency>
-      <groupId>org.springframework.data</groupId>
-      <artifactId>spring-data-redis</artifactId>
-      <version>1.7.3.RELEASE</version>
-    </dependency>
-    <!-- Spring Session -->
-    <dependency>
-      <groupId>org.springframework.session</groupId>
-      <artifactId>spring-session</artifactId>
-      <version>1.2.2.RELEASE</version>
-    </dependency>
     <!-- Apache Commons Pool -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-pool2</artifactId>
       <version>2.4.2</version>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
 
 
-    <!--卡夫卡日志收集-->
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
     <dependency>
-      <groupId>org.apache.kafka</groupId>
-      <artifactId>kafka-clients</artifactId>
-      <version>0.8.2.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.kafka</groupId>
-      <artifactId>kafka_2.11</artifactId>
-      <version>0.8.2.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>18.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.itranswarp</groupId>
-      <artifactId>compiler</artifactId>
-      <version>1.0</version>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.5</version>
     </dependency>
   </dependencies>
 
