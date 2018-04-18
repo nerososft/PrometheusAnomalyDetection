@@ -13,6 +13,51 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/CONSTANT/CONSTANT.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/CONSTANT/DetectionMethod.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/client/HttpClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/core/detection/AnomalyDetection.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/core/forecast/GradientDescent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/core/forecast/LinearPrediction.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/core/forecast/LinearRegression.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/core/math/MathCompute.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/entity/DataPoint.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/pingcap/anomalydetection/CONSTANT/CONSTANT.java">
           <value>
             <set />

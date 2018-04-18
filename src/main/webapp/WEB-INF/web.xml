@@ -21,7 +21,7 @@
 
   <filter>
     <filter-name>cors</filter-name>
-    <filter-class>com.pingcap.anomalydetection.web.filter.CORSFilter</filter-class>
+    <filter-class>com.neroyang.anomalydetection.web.filter.CORSFilter</filter-class>
   </filter>
 
   <filter-mapping>
@@ -41,7 +41,7 @@
 
   <servlet>
     <servlet-name>api_servlet</servlet-name>
-    <servlet-class>com.pingcap.anomalydetection.web.servlet.ApiServlet</servlet-class>
+    <servlet-class>com.neroyang.anomalydetection.web.servlet.ApiServlet</servlet-class>
     <load-on-startup>2</load-on-startup>
     <init-param>
       <param-name>contextConfigLocation</param-name>
