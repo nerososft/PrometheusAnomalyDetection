@@ -5,6 +5,8 @@ import com.neroyang.anomalydetection.prometheus.api.PrometheusHttpApi;
 import com.neroyang.anomalydetection.prometheus.exception.ParametersIncorrectException;
 import com.neroyang.anomalydetection.prometheus.exception.ServiceUnavailableException;
 import com.neroyang.anomalydetection.prometheus.exception.UnprocessableEntityException;
+import com.neroyang.anomalydetection.prometheus.response.HttpResponse;
+import com.neroyang.anomalydetection.prometheus.response.QueryData;
 import com.neroyang.anomalydetection.utils.spring.PropertyPlaceholder;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -14,6 +16,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+import javax.management.Query;
+import javax.xml.ws.Response;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
@@ -38,6 +42,23 @@ public class HttpClient {
         final String PrometheusNameSpace = PropertyPlaceholder.getProperty("prometheus.namespace").toString();
 
         this.prometheusHttpApi = new PrometheusHttpApi(PrometheusHost,PrometheusPort,PrometheusNameSpace);
+    }
+
+
+    /**
+     * query=<string>: Prometheus expression query string.
+     * time=<rfc3339 | unix_timestamp>: Evaluation timestamp. Optional.
+     * timeout=<duration>: Evaluation timeout. Optional. Defaults to and is capped by the value of the -query.timeout flag.
+     * @return
+     * @throws URISyntaxException
+     */
+    HttpResponse<QueryData> instantQueries(String query, String time, Integer timeout) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+        URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.instantQueries());
+        uriBuilder.addParameter("query",query);
+        uriBuilder.addParameter("time",time);
+
+        HttpResponse httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        return httpResponse;
     }
 
     private <T> T doHttpRequest(Class<T> data, URIBuilder uriBuilder) throws IOException, URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException {

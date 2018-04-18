@@ -8,14 +8,14 @@ import java.io.Serializable;
  * Date   2018/4/18
  * Time   下午11:54
  */
-public class QueryData<T> implements Serializable {
+public class QueryData implements Serializable {
     private String resultType;//"matrix" | "vector" | "scalar" | "string",
-    private T result;
+    private Object result;
 
     public QueryData() {
     }
 
-    public QueryData(String resultType, T result) {
+    public QueryData(String resultType, Object result) {
         this.resultType = resultType;
         this.result = result;
     }
@@ -28,11 +28,11 @@ public class QueryData<T> implements Serializable {
         this.resultType = resultType;
     }
 
-    public T getResult() {
+    public Object getResult() {
         return result;
     }
 
-    public void setResult(T result) {
+    public void setResult(Object result) {
         this.result = result;
     }
 
