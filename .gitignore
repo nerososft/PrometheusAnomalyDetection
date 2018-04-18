@@ -1,0 +1,4 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+src/main/java/com/neroyang/anomalydetection/dto/
+src/test/
