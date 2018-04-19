@@ -33,7 +33,7 @@ public class PrometheusHttpClient extends HttpClient {
         this.prometheusHttpApi = new PrometheusHttpApi(PrometheusHost,PrometheusPort,PrometheusNameSpace);
     }
 
-    public PrometheusHttpClient(String host, String port, String nameSpace) throws IOException {
+    PrometheusHttpClient(String host, String port, String nameSpace) throws IOException {
         this.prometheusHttpApi = new PrometheusHttpApi(host,port,nameSpace);
 
     }
@@ -60,8 +60,7 @@ public class PrometheusHttpClient extends HttpClient {
         uriBuilder.addParameter("timeout",String.valueOf(timeout));
 
 
-        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
-        return httpResponse;
+        return doHttpRequest(HttpResponse.class,uriBuilder);
     }
 
     /**
@@ -91,9 +90,7 @@ public class PrometheusHttpClient extends HttpClient {
         uriBuilder.addParameter("step",String.valueOf(step));
         uriBuilder.addParameter("timeout",String.valueOf(timeout));
 
-        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
-
-        return httpResponse;
+        return doHttpRequest(HttpResponse.class,uriBuilder);
     }
 
 
@@ -117,8 +114,7 @@ public class PrometheusHttpClient extends HttpClient {
         uriBuilder.addParameter("start",start);
         uriBuilder.addParameter("end",end);
 
-        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
-        return httpResponse;
+        return doHttpRequest(HttpResponse.class,uriBuilder);
     }
 
     /**
@@ -134,8 +130,7 @@ public class PrometheusHttpClient extends HttpClient {
     HttpResponse<QueryData> queryingLabelValues(String label) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.queryingLabelValues(label));
 
-        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
-        return httpResponse;
+        return doHttpRequest(HttpResponse.class,uriBuilder);
     }
 
     /**
@@ -150,8 +145,7 @@ public class PrometheusHttpClient extends HttpClient {
     HttpResponse<QueryData> targets() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.targets());
 
-        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
-        return httpResponse;
+        return doHttpRequest(HttpResponse.class,uriBuilder);
     }
 
     /**
@@ -166,8 +160,7 @@ public class PrometheusHttpClient extends HttpClient {
     HttpResponse<QueryData> alertmanagers() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.alertmanagers());
 
-        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
-        return httpResponse;
+        return doHttpRequest(HttpResponse.class,uriBuilder);
     }
 
     /**
@@ -182,8 +175,7 @@ public class PrometheusHttpClient extends HttpClient {
     HttpResponse<QueryData> config() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.config());
 
-        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
-        return httpResponse;
+        return doHttpRequest(HttpResponse.class,uriBuilder);
     }
 
 
@@ -199,8 +191,7 @@ public class PrometheusHttpClient extends HttpClient {
     HttpResponse<QueryData> flags() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.flags());
 
-        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
-        return httpResponse;
+        return doHttpRequest(HttpResponse.class,uriBuilder);
     }
 
 
