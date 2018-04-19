@@ -78,6 +78,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/client/PrometheusHttpClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/constant/CONSTANT.java">
           <value>
             <set />
