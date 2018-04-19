@@ -53,7 +53,7 @@ public class PrometheusHttpClient extends HttpClient {
      * @throws ServiceUnavailableException
      * @throws IOException
      */
-    HttpResponse<QueryData> instantQueries(String query, String time, Integer timeout) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+    public HttpResponse<QueryData> instantQueries(String query, String time, Integer timeout) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.instantQueries());
         uriBuilder.addParameter("query",query);
         uriBuilder.addParameter("time",time);
@@ -82,7 +82,7 @@ public class PrometheusHttpClient extends HttpClient {
      * @throws ServiceUnavailableException
      * @throws IOException
      */
-    HttpResponse<QueryData> rangeQueries(String query,String start,String end,Integer step,Integer timeout) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+    public HttpResponse<QueryData> rangeQueries(String query,String start,String end,Integer step,Integer timeout) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.instantQueries());
         uriBuilder.addParameter("query",query);
         uriBuilder.addParameter("start",start);
@@ -108,7 +108,7 @@ public class PrometheusHttpClient extends HttpClient {
      * @throws ServiceUnavailableException
      * @throws IOException
      */
-    HttpResponse<QueryData> findSeriesByLabelMatchers(String match,String start,String end) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+    public HttpResponse<QueryData> findSeriesByLabelMatchers(String match,String start,String end) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.findSeriesByLabelMatchers());
         uriBuilder.addParameter("match[]",match);
         uriBuilder.addParameter("start",start);
@@ -127,7 +127,7 @@ public class PrometheusHttpClient extends HttpClient {
      * @throws ServiceUnavailableException
      * @throws IOException
      */
-    HttpResponse<QueryData> queryingLabelValues(String label) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+    public HttpResponse<QueryData> queryingLabelValues(String label) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.queryingLabelValues(label));
 
         return doHttpRequest(HttpResponse.class,uriBuilder);
@@ -142,7 +142,7 @@ public class PrometheusHttpClient extends HttpClient {
      * @throws ServiceUnavailableException
      * @throws IOException
      */
-    HttpResponse<QueryData> targets() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+    public HttpResponse<QueryData> targets() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.targets());
 
         return doHttpRequest(HttpResponse.class,uriBuilder);
@@ -157,7 +157,7 @@ public class PrometheusHttpClient extends HttpClient {
      * @throws ServiceUnavailableException
      * @throws IOException
      */
-    HttpResponse<QueryData> alertmanagers() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+    public HttpResponse<QueryData> alertmanagers() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.alertmanagers());
 
         return doHttpRequest(HttpResponse.class,uriBuilder);
@@ -172,7 +172,7 @@ public class PrometheusHttpClient extends HttpClient {
      * @throws ServiceUnavailableException
      * @throws IOException
      */
-    HttpResponse<QueryData> config() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+    public HttpResponse<QueryData> config() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.config());
 
         return doHttpRequest(HttpResponse.class,uriBuilder);
@@ -188,13 +188,10 @@ public class PrometheusHttpClient extends HttpClient {
      * @throws ServiceUnavailableException
      * @throws IOException
      */
-    HttpResponse<QueryData> flags() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+    public HttpResponse<QueryData> flags() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
         URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.flags());
 
         return doHttpRequest(HttpResponse.class,uriBuilder);
     }
-
-
-
 
 }

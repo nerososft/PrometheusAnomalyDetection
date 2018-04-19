@@ -58,7 +58,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/dto/Metric.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/dto/Result.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/entity/DataPoint.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/exception/ResponseReturnFalseException.java">
           <value>
             <set />
           </value>
@@ -118,6 +133,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/Metric.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/QueryData.java">
           <value>
             <set />
@@ -139,6 +159,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/prometheus/response/Strings.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/service/IApiService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/neroyang/anomalydetection/service/impl/ApiService.java">
           <value>
             <set />
           </value>
@@ -264,6 +294,96 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/java/com/neroyang/anomalydetection/prometheus/client/HttpClientTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/meeting_service/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/parent/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/parent/src/main/java/com/nero/e/tju/entity/admin/Authority.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_admin/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_admin/src/main/java/com/nero/e/tju/service/impl/AuthorityManagementService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_admin/src/main/java/com/nero/e/tju/service/impl/DepartmentManagementService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_admin/src/main/java/com/nero/e/tju/service/impl/IAuthorityManagementService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_admin/src/main/java/com/nero/e/tju/service/impl/PushManagementService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_admin/src/main/java/com/nero/e/tju/service/impl/RoleManagementService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_admin/src/main/java/com/nero/e/tju/service/impl/UserManagementService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_admin/src/main/java/com/nero/e/tju/service/impl/WorkFlowManagementService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_push/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_push/src/main/java/com/nero/e/tju/service/impl/EmailPushService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_push/src/main/java/com/nero/e/tju/service/impl/MqPushService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_push/src/main/java/com/nero/e/tju/service/impl/SmsPushService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_sso/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../e.tju/service_sso/src/main/java/com/nero/e/tju/service/impl/SsoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
           <value>
             <set />
           </value>

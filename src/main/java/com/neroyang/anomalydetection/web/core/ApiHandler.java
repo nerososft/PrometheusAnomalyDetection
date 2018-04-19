@@ -22,9 +22,9 @@ import java.text.ParseException;
 import java.util.*;
 
 /**
- * Author 和少帅
- * Email  15107558620@163.com.
- * Date   2017/9 1
+ * Author neroyang
+ * Email  nerosoft@outlook.com
+ * Date   2017/8/25
  * Time   下午12:41
  */
 public class ApiHandler implements InitializingBean, ApplicationContextAware {
