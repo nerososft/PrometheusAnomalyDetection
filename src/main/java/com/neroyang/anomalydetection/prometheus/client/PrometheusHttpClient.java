@@ -95,4 +95,115 @@ public class PrometheusHttpClient extends HttpClient {
 
         return httpResponse;
     }
+
+
+    /**
+     * match[]=<series_selector>: Repeated series selector argument that selects the series to return. At least one match[] argument must be provided.
+     * start=<rfc3339 | unix_timestamp>: Start timestamp.
+     * end=<rfc3339 | unix_timestamp>: End timestamp.
+     * @param match
+     * @param start
+     * @param end
+     * @return
+     * @throws URISyntaxException
+     * @throws ParametersIncorrectException
+     * @throws UnprocessableEntityException
+     * @throws ServiceUnavailableException
+     * @throws IOException
+     */
+    HttpResponse<QueryData> findSeriesByLabelMatchers(String match,String start,String end) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+        URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.findSeriesByLabelMatchers());
+        uriBuilder.addParameter("match[]",match);
+        uriBuilder.addParameter("start",start);
+        uriBuilder.addParameter("end",end);
+
+        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        return httpResponse;
+    }
+
+    /**
+     * The following endpoint returns a list of label values for a provided label name:
+     * @param label
+     * @return
+     * @throws URISyntaxException
+     * @throws ParametersIncorrectException
+     * @throws UnprocessableEntityException
+     * @throws ServiceUnavailableException
+     * @throws IOException
+     */
+    HttpResponse<QueryData> queryingLabelValues(String label) throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+        URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.queryingLabelValues(label));
+
+        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        return httpResponse;
+    }
+
+    /**
+     * The following endpoint returns an overview of the current state of the Prometheus target discovery:
+     * @return
+     * @throws URISyntaxException
+     * @throws ParametersIncorrectException
+     * @throws UnprocessableEntityException
+     * @throws ServiceUnavailableException
+     * @throws IOException
+     */
+    HttpResponse<QueryData> targets() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+        URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.targets());
+
+        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        return httpResponse;
+    }
+
+    /**
+     * The following endpoint returns an overview of the current state of the Prometheus alertmanager discovery:
+     * @return
+     * @throws URISyntaxException
+     * @throws ParametersIncorrectException
+     * @throws UnprocessableEntityException
+     * @throws ServiceUnavailableException
+     * @throws IOException
+     */
+    HttpResponse<QueryData> alertmanagers() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+        URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.alertmanagers());
+
+        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        return httpResponse;
+    }
+
+    /**
+     * The following endpoint returns currently loaded configuration file:
+     * @return
+     * @throws URISyntaxException
+     * @throws ParametersIncorrectException
+     * @throws UnprocessableEntityException
+     * @throws ServiceUnavailableException
+     * @throws IOException
+     */
+    HttpResponse<QueryData> config() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+        URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.config());
+
+        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        return httpResponse;
+    }
+
+
+    /**
+     * The following endpoint returns flag values that Prometheus was configured with:
+     * @return
+     * @throws URISyntaxException
+     * @throws ParametersIncorrectException
+     * @throws UnprocessableEntityException
+     * @throws ServiceUnavailableException
+     * @throws IOException
+     */
+    HttpResponse<QueryData> flags() throws URISyntaxException, ParametersIncorrectException, UnprocessableEntityException, ServiceUnavailableException, IOException {
+        URIBuilder uriBuilder = new URIBuilder(prometheusHttpApi.flags());
+
+        HttpResponse<QueryData> httpResponse = doHttpRequest(HttpResponse.class,uriBuilder);
+        return httpResponse;
+    }
+
+
+
+
 }
